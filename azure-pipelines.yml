@@ -63,7 +63,7 @@ stages:
           - task: KubernetesManifest@0
             inputs:
               action: 'createSecret'
-              kubernetesServiceConnection: 'azure-pipelines-canary-k8s-connection'
+              kubernetesServiceConnection: 'azure-pipelines-canary-k8s-connection2'
               namespace: 'canarydemo'
               secretType: 'dockerRegistry'
               secretName: 'azure-pipelines-canary-k8s'
