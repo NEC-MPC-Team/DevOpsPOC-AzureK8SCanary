@@ -22,14 +22,22 @@ stages:
     steps:
 
     - task: Docker@2
-      displayName: Build and push image
       inputs:
-        containerRegistry: 'azure-pipelines-canary-docker-connection'
-        repository: $(imageName)
-        command: buildAndPush
-        Dockerfile: app/Dockerfile
-        tags: |
-          $(tag)
+        containerRegistry: 'canarycrconnection'
+        repository: '$(imageName)'
+        command: 'buildAndPush'
+        Dockerfile: 'app/Dockerfile'
+        tags: '$(tag)'
+    
+    # - task: Docker@2
+    #   displayName: Build and push image
+    #   inputs:
+    #     containerRegistry: 'azure-pipelines-canary-docker-connection'
+    #     repository: $(imageName)
+    #     command: buildAndPush
+    #     Dockerfile: app/Dockerfile
+    #     tags: |
+    #       $(tag)
 
     - upload: manifests
       artifact: manifests
