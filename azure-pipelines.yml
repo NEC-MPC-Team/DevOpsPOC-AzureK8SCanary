@@ -93,4 +93,4 @@ stages:
             inputs:
               action: 'deploy'
               manifests: |
-                $(Pipeline.Workspace)/misc/*
+                $(Pipeline.Workspace)/misc/fortio.yml
