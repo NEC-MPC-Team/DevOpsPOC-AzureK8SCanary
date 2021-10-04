@@ -3,6 +3,7 @@ kind: ServiceMonitor
 metadata:
   name: sampleapp
   labels:
+    app.kubernetes.io/component: prometheus
     app: sampleapp
     release: sampleapp
 spec:
